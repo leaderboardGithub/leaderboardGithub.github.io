@@ -61,6 +61,7 @@ defPointerUnlockElement.exitPointerLock =
 	defPointerUnlockElement.mozExitPointerLock ||
 	defPointerUnlockElement.webkitExitPointerLock;
 
+
 setTimeout(hideDiv, 6900);
 function hideDiv() {
 	document.getElementById("loadingScreen").style.display = "none";
@@ -766,16 +767,16 @@ function animate() {
 		}
 		if (onFloor) {
 			while (playDeath == true){
-				pauseGameplay();
+			//	pauseGameplay();
 				deathAudio = new Audio();
 				deathAudio.src = "audio/deathEffect.mp3";
 				deathAudio.play();
 				playDeath = false;
 			}
 			scene.fog = new THREE.Fog(fogColour2, 0, 60);
-			displayScore();
+			document.getElementById("scoreText").style.display = "none";
 			gamePause = true;
-
+		    displayScore();
 		}
 		// Makes lava go up
 		var lavaSpeedValue = document.getElementById("lavaSpeed").value / 10;
